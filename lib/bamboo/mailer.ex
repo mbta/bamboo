@@ -78,14 +78,6 @@ defmodule Bamboo.Mailer do
       otp_app = Keyword.fetch!(opts, :otp_app)
 
       defp build_config, do: Bamboo.Mailer.build_config(__MODULE__, unquote(otp_app))
-
-      def deliver(_email) do
-        raise """
-        you called deliver/1, but it has been renamed to deliver_now/1 to add clarity.
-
-        Use deliver_now/1 to send right away, or deliver_later/1 to send in the background.
-        """
-      end
     end
   end
 
